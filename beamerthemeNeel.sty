@@ -1,0 +1,154 @@
+% Copyright 2019 by Julio Cesar da Silva.
+%
+% This file is distributed under the GNU Public License.
+% You can redistribute and/or modify this file under the terms of
+% the GNU General Public License as published by the
+% Free Software Foundation, either version 2 of the License, or
+% (at your option) any later version.
+%
+% This file is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% For the complete text of the GNU General Public License, please
+% see: http://www.gnu.org/licenses
+
+\usepackage{tikz}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{graphicx}
+\usepackage[document]{ragged2e}
+
+% Colors
+\definecolor{NEELblue1}{RGB}{19,37,119}
+\definecolor{NEELblue2}{RGB}{78,91,153}
+\definecolor{NEELorange1}{RGB}{242,107,67}
+\definecolor{NEELorange2}{RGB}{237,119,3}
+\definecolor{NEELorange3}{RGB}{244,163,0}
+\definecolor{NEELlightGrey}{RGB}{244,244,244}
+\definecolor{NEELmidGrey}{RGB}{209,210,212}
+\definecolor{NEELdarkerGrey}{RGB}{183,185,186}
+\definecolor{NEELdimGrey}{RGB}{105,105,105}
+\definecolor{NEELmagenta}{RGB}{175,0,124}
+\definecolor{NEELcyan}{RGB}{0,152,212}
+\definecolor{NEELgreen}{RGB}{81,160,38}
+\definecolor{NEELyellow}{RGB}{255,221,0}
+
+\setbeamercolor*{frametitle}{fg=NEELcyan}
+\setbeamercolor*{item}{fg=NEELblue1}
+\setbeamercolor*{testcol}{bg=green,fg=red}
+
+% Colors for Title, subtitle, institute, author, date
+\setbeamercolor{title}{fg=NEELcyan}
+\setbeamercolor{subtitle}{fg=NEELcyan}
+\setbeamercolor{author}{fg=NEELdimGrey}
+\setbeamercolor{institute}{fg=NEELdimGrey}
+\setbeamercolor{date}{fg=NEELmidGrey}
+%\setbeamercolor{email}{fg=NEELmidGrey}
+
+% Blocks
+\setbeamercolor{block title}{bg=NEELblue2,fg=white}
+\setbeamercolor{block body}{bg=NEELmidGrey,fg=black}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% Bullets
+\setbeamertemplate{itemize item}{\tiny\raise1.2pt\hbox{\donotcoloroutermaths$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.0pt\hbox{\donotcoloroutermaths$\square$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise0.5pt\hbox{\donotcoloroutermaths$\diamond$}}
+
+% Customize fonts
+\setbeamerfont*{frametitle}{family=\sffamily,series=\bfseries}
+\setbeamerfont*{author}{family=\sffamily,series=\bfseries,size=\large}
+\setbeamerfont*{institute}{family=\sffamily,shape=\itshape,size=\small}
+\setbeamerfont*{title}{family=\sffamily,series=\bfseries,size=\Large}
+
+% customize title page
+\setbeamertemplate{title page}{%
+    \begin{beamercolorbox}[sep=4pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    %\vskip-1em
+    \par
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vspace{-1.5mm}
+    \par
+    \begin{beamercolorbox}[sep=4pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vspace{1.5cm}
+}
+
+% add watermark
+\usebackgroundtemplate
+{
+	\parbox[c][\paperheight][c]{\paperwidth}{\flushright\includegraphics[height=0.7\paperheight,trim={0 0 27 0},clip]{Neel_sphere_watermark}}
+}
+
+%\parbox[c][\paperheight][c]{\paperwidth}{\centering\includegraphics[width=1.5in]{name}}
+
+% title page
+% Yet another alternative title page - especially fitting for wide screen, but for traditional AR as well.
+% Receives an image (MUST BE 3x1 aspect ratio), a text, and another block of text - for description.
+% Please note: this title page requires a second compilation if changed! OTHERWISE IT'LL LOOK UGLY!
+\newcommand{\TitPageWide}{
+  \begin{tikzpicture}[remember picture,overlay]
+  	%\vskip-2em
+    \node[anchor=north] at (current page.north) {\includegraphics[width=\paperwidth]{Neel_title_fond}};
+    \node[anchor=north] at (0.35\paperwidth,10 pt) {\includegraphics[width=0.11\paperwidth]{logo_UGA}};
+    \node[anchor=north] at (0.49\paperwidth,10 pt) {\includegraphics[width=0.07\paperwidth]{logo_INP}};
+    \node[anchor=north] at (0.66\paperwidth,10 pt) {\includegraphics[width=0.05\paperwidth]{logo_cnrs}};
+    \node[anchor=center,text width=0.7\paperwidth] at (0.4\paperwidth,-0.7\paperheight){\titlepage};
+    %\node[anchor=south] at (current page.south) {\includegraphics[scale=1]{Neel_footer_img1}};%(-14.5 pt,-2 pt)
+  \end{tikzpicture}
+  
+}
+
+% Header
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+\vskip4pt%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.1\paperheight,center]{frametitle} 
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north,inner sep=8pt,outer sep=0pt] at (current page.north) {\includegraphics[width=\paperwidth]{Neel_ruler_header}};
+    \node[anchor=north] at (0.42\paperwidth,28 pt) {\includegraphics[width=0.04\paperwidth]{logo_cnrs}};
+    \node[anchor=north] at (-0.42\paperwidth,28 pt) {\includegraphics[width=0.07\paperwidth]{logo_neel}};
+    \ifx\insertframesubtitle\@empty%
+      \node[anchor=north,font=\Large,inner sep=10pt,outer sep=0pt] at (current page.north){\insertframetitle};
+    \else%
+      \node[anchor=north,font=\large,inner sep=6pt,outer sep=0pt] at (current page.north){\insertframetitle};
+      \node[anchor=north,font=\footnotesize,inner sep=18pt,outer sep=0pt] at (current page.north){\insertframesubtitle};
+   \fi
+  \end{tikzpicture}
+
+  \end{beamercolorbox}
+}
+
+% Footer
+\setbeamertemplate{footline}
+{
+   \hbox{
+    \begin{tikzpicture}[remember picture,overlay]
+    	\node[anchor=south,inner sep=0pt,outer sep=6pt] at (current page.south) {\includegraphics[width=0.95\paperwidth]{Neel_footer_img}};
+    \end{tikzpicture}
+
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.25ex,dp=2ex,center]{author in head/foot}%
+        {\color{NEELdimGrey}\insertshortdate}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.68\paperwidth,ht=2.25ex,dp=2ex,center]{title in head/foot}%
+        {\color{NEELdimGrey}neel.cnrs.fr}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.25ex,dp=2ex,center]{date in head/foot}%
+        {\color{NEELdimGrey}\insertframenumber{}}
+    \end{beamercolorbox}
+        }
+}
+
+% remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
