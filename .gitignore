@@ -4,5 +4,6 @@ notused/
 *.nav
 *.out
 *.snm
-*.gz
+*.synctex.gz
 *.toc
+

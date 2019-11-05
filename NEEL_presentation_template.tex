@@ -24,11 +24,16 @@
 \usepackage{setspace} % For convenient line-spacing control
 \usepackage{tcolorbox} % For color boxes (e.g. for code)
 
+% reformating date. When using babel, it does not work
+%\usepackage[ddmmyyyy]{datetime}
+% so we need to do:
+%\let\dateenglish=\ddmmyyyydate
 
 \newtcbox{\codebox}{nobeforeafter,colframe=NEELdarkerGrey,colback=NEELmidGrey,boxrule=0.5pt,arc=2pt,
   boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=1pt,tcbox raise base}
 
 \graphicspath{{graphics/}}
+%--------------------------------------------------------------------------
 
 \author{Author's name}
 % Optional choice for including e-mail:
