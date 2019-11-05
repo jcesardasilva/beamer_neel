@@ -60,7 +60,7 @@
 
 % Customize fonts
 \setbeamerfont*{title}{family=\sffamily,series=\bfseries,size=\Large}
-\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\large}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries} % the size is set later
 \setbeamerfont*{author}{family=\sffamily,series=\bfseries,size=\normalsize}
 \setbeamerfont*{institute}{family=\sffamily,shape=\itshape,size=\small}
 
@@ -121,7 +121,7 @@
     \node[anchor=north] at (0.44\paperwidth,28 pt) {\includegraphics[width=0.04\paperwidth]{logo_cnrs}};
     \node[anchor=north] at (-0.44\paperwidth,28 pt) {\includegraphics[width=0.07\paperwidth]{logo_neel}};
     \ifx\insertframesubtitle\@empty%
-      \node[anchor=north,font=\Large,inner sep=10pt,outer sep=0pt] at (current page.north){\insertframetitle};
+      \node[anchor=north,font=\large,inner sep=10pt,outer sep=0pt] at (current page.north){\insertframetitle};
     \else%
       \node[anchor=north,font=\large,inner sep=6pt,outer sep=0pt] at (current page.north){\insertframetitle};
       \node[anchor=north,font=\footnotesize,inner sep=18pt,outer sep=0pt] at (current page.north){\insertframesubtitle};
