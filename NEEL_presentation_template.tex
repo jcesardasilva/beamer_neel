@@ -14,11 +14,17 @@
 % For the complete text of the GNU General Public License, please
 % see: http://www.gnu.org/licenses
 
-\documentclass{beamer}
-%\documentclass[aspectratio=169]{beamer}  % For widescreen format
+\documentclass[usenames,dvipsnames]{beamer}
+%\documentclass[usenames,dvipsnames,aspectratio=169]{beamer}  % For widescreen format
+
+\mode<presentation>
+
+% Use Neel's theme
 \usetheme{Neel}
-\usepackage{setspace}   % For convenient line-spacing control
-\usepackage{tcolorbox}  % For color boxes (e.g. for code)
+\usepackage{setspace} % For convenient line-spacing control
+\usepackage{tcolorbox} % For color boxes (e.g. for code)
+
+
 \newtcbox{\codebox}{nobeforeafter,colframe=NEELdarkerGrey,colback=NEELmidGrey,boxrule=0.5pt,arc=2pt,
   boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=1pt,tcbox raise base}
 

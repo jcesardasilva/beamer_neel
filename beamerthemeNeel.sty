@@ -57,10 +57,10 @@
 \setbeamertemplate{itemize subsubitem}{\tiny\raise0.5pt\hbox{\donotcoloroutermaths$\diamond$}}
 
 % Customize fonts
-\setbeamerfont*{frametitle}{family=\sffamily,series=\bfseries}
+\setbeamerfont*{title}{family=\sffamily,series=\bfseries,size=\Large}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\large}
 \setbeamerfont*{author}{family=\sffamily,series=\bfseries,size=\large}
 \setbeamerfont*{institute}{family=\sffamily,shape=\itshape,size=\small}
-\setbeamerfont*{title}{family=\sffamily,series=\bfseries,size=\Large}
 
 % customize title page
 \setbeamertemplate{title page}{%
@@ -91,8 +91,6 @@
 	\parbox[c][\paperheight][c]{\paperwidth}{\flushright\includegraphics[height=0.7\paperheight,trim={0 0 27 0},clip]{Neel_sphere_watermark}}
 }
 
-%\parbox[c][\paperheight][c]{\paperwidth}{\centering\includegraphics[width=1.5in]{name}}
-
 % title page
 % Yet another alternative title page - especially fitting for wide screen, but for traditional AR as well.
 % Receives an image (MUST BE 3x1 aspect ratio), a text, and another block of text - for description.
@@ -104,7 +102,7 @@
     \node[anchor=north] at (0.35\paperwidth,10 pt) {\includegraphics[width=0.11\paperwidth]{logo_UGA}};
     \node[anchor=north] at (0.49\paperwidth,10 pt) {\includegraphics[width=0.07\paperwidth]{logo_INP}};
     \node[anchor=north] at (0.66\paperwidth,10 pt) {\includegraphics[width=0.05\paperwidth]{logo_cnrs}};
-    \node[anchor=center,text width=0.7\paperwidth] at (0.4\paperwidth,-0.7\paperheight){\titlepage};
+    \node[anchor=center,text width=0.9\paperwidth] at (0.4\paperwidth,-0.72\paperheight){\titlepage};
     %\node[anchor=south] at (current page.south) {\includegraphics[scale=1]{Neel_footer_img1}};%(-14.5 pt,-2 pt)
   \end{tikzpicture}
   
@@ -117,8 +115,8 @@
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.1\paperheight,center]{frametitle} 
   \begin{tikzpicture}[remember picture,overlay]
     \node[anchor=north,inner sep=8pt,outer sep=0pt] at (current page.north) {\includegraphics[width=\paperwidth]{Neel_ruler_header}};
-    \node[anchor=north] at (0.42\paperwidth,28 pt) {\includegraphics[width=0.04\paperwidth]{logo_cnrs}};
-    \node[anchor=north] at (-0.42\paperwidth,28 pt) {\includegraphics[width=0.07\paperwidth]{logo_neel}};
+    \node[anchor=north] at (0.44\paperwidth,28 pt) {\includegraphics[width=0.04\paperwidth]{logo_cnrs}};
+    \node[anchor=north] at (-0.44\paperwidth,28 pt) {\includegraphics[width=0.07\paperwidth]{logo_neel}};
     \ifx\insertframesubtitle\@empty%
       \node[anchor=north,font=\Large,inner sep=10pt,outer sep=0pt] at (current page.north){\insertframetitle};
     \else%
@@ -135,9 +133,8 @@
 {
    \hbox{
     \begin{tikzpicture}[remember picture,overlay]
-    	\node[anchor=south,inner sep=0pt,outer sep=6pt] at (current page.south) {\includegraphics[width=0.95\paperwidth]{Neel_footer_img}};
+    	\node[anchor=south,inner sep=0pt,outer sep=4pt] at (current page.south) {\includegraphics[width=0.95\paperwidth]{Neel_footer_img}};
     \end{tikzpicture}
-
     \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.25ex,dp=2ex,center]{author in head/foot}%
         {\color{NEELdimGrey}\insertshortdate}
     \end{beamercolorbox}%
